@@ -6,7 +6,7 @@
     <thead>
       <tr>
         <th>id</th>
-        <th>タイトル</th>
+        <th>ステータス</th>
         <th>サンプル</th>
       </tr>
     </thead>
@@ -16,7 +16,7 @@
 
       <tr>
         <td><%= link_to task.id, task_path(task) %></td>
-        <td><%= task.title %></td>
+        <td><%= task.status %></td>
         <td><%= task.content %></td>
       </tr>
       <% end %>
