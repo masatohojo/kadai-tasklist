@@ -3,11 +3,11 @@
     <h1>id: <%= @task.id %> のサンプル編集ページ</h1>
     <%= form_for(@task) do |f| %>
     
-    <% if message.errors.any? %>
+    <% if @task.errors.any? %>
 
     <div id="error_explanation">
       <ul>
-        <% message.errors.full_messages.each do |message| %>
+        <% @task.errors.full_messages.each do |message| %>
 
         <li><%= message %></li>
         
@@ -16,7 +16,6 @@
     </div>
     
     <% end %>
-
 
     <div class="form-group">
       <%= f.label :status, 'ステータス' %>
