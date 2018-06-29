@@ -1,29 +1,38 @@
-<h1>サンプル一覧</h1>
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
+    
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
+      </div>
+    <% end %>
+    
+    <h1>サンプル一覧</h1>
 
-<% if @tasks.any? %>
+    <% if @tasks.any? %>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>ステータス</th>
-        <th>サンプル</th>
-      </tr>
-    </thead>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>ステータス</th>
+            <th>サンプル</th>
+          </tr>
+        </thead>
 
-    <tbody>
-      <% @tasks.each do |task| %>
+        <tbody>
+          <% @tasks.each do |task| %>
 
-      <tr>
-        <td><%= link_to task.id, task_path(task) %></td>
-        <td><%= task.status %></td>
-        <td><%= task.content %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+          <tr>
+            <td><%= link_to task.id, task_path(task) %></td>
+            <td><%= task.status %></td>
+            <td><%= task.content %></td>
+          </tr>
+          <% end %>
+        </tbody>
+     </table>
+    <% end %>
   
-
-
-<%= link_to '新規サンプルの投稿', new_task_path, class: "btn btn-primary" %>
+    <%= link_to '新規サンプルの投稿', new_task_path, class: "btn btn-primary" %>
+  </div>
+</div>
