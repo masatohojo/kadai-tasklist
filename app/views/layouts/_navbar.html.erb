@@ -8,13 +8,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Tasklist</a>
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to 'Tasklist', tasks_path %></li>
+        </ul>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li>
-              <%= link_to  '新規サンプルの投稿', new_task_path %>
-          </li>
+          <li><%= link_to 'Signup', new_user_path %></li>
+          <li><%= link_to 'Login', new_session_path %></li>
+          <li><%= link_to 'Logout', logout_path, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
         </ul>
       </div>
     </div>
