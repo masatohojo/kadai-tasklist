@@ -1,9 +1,10 @@
+
 <div class="row">
   <div class="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
     
     <%= render 'layouts/flash_messages' %>
     
-    <h1>id: <%= @task.id %>のサンプル名詳細ページ</h1>
+    <h1>id: <%= @task.id %>のステータス、内容詳細ページ</h1>
     <table class="table table-bordered">
       <tr>
         <th>id</th>
@@ -14,7 +15,7 @@
         <td><%= @task.status %></td>
       </tr>
       <tr>
-        <th>サンプル</th>
+        <th>内容</th>
         <td><%= @task.content %></td>
       </tr>
     </table>
